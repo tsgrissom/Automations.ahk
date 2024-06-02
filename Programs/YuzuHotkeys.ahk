@@ -1,7 +1,7 @@
 #SingleInstance Force
 SendMode "Input"
 
-#HotIf WinExist("ahk_exe yuzu.exe")
+#HotIf WinActive("ahk_exe yuzu.exe")
 ^f:: { ; This script gets to the Controls section of Yuzu's settings, need to figure out how to send gamepad buttons
     WinActivate
     Sleep 10
