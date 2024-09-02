@@ -1,7 +1,8 @@
-﻿#SingleInstance Force
+﻿#Requires AutoHotkey v2.0
+#SingleInstance Force
 #Warn
 
-#Include Utils\DownloadManagementUtils.ahk
+#Include Utilities.ahk
 
 CountCommonSubdirectories := SubdirectoryIDMCommon.Length
 GuiConfirmEmpty := Gui(, "Empty " CountCommonSubdirectories " /Downloads/ folders?")

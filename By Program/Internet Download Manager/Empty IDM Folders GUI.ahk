@@ -1,7 +1,8 @@
+#Requires AutoHotkey v2.0
 #SingleInstance Force
 #Warn
 
-#Include "Utils\DownloadManagementUtils.ahk"
+#Include "Utilities.ahk"
 
 ; Initialize GUI
 GuiEmptyDownloads := Gui(, "Empty Downloads")

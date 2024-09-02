@@ -1,3 +1,5 @@
+#Requires AutoHotkey v2.0
+
 DirectoryDownloads      := "C:\Users\" . A_UserName . "\Downloads\"
 SubdirectoryIDMCommon   := ["Compressed", "Documents", "Programs"]
 SubdirectoryIDMAll      := ["Compressed", "Documents", "General", "Music", "Programs", "Videos"]
