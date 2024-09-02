@@ -1,3 +1,6 @@
+; DISCLAIMER: In theory, this script supports the listed browsers in variable Browsers, but this has not been tested outside of MS Edge.
+
+#Requires AutoHotkey v2.0
 #SingleInstance Force
 Persistent
 SendMode "Input"

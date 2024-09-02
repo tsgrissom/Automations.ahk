@@ -24,12 +24,6 @@ NewTabOrOpen(AhkClass, Delay := 500) {
 #+e::MsgBox "Namespace for opening dual Windows Explorer windows", "Parallel Explorer shortcut" ; Parallel Explorer windows
 #p::Run "explorer C:\Program Files\"
 
-; Opens AHK's WindowSpy (Win+Alt+W)
-#!w::Run 'AutoHotkey.exe "C:\Program Files\AutoHotkey\WindowSpy.ahk"'
-
-; F.lux toggle (Win+Ctrl+F)
-#^f::Send "{Alt down}{End down}{Alt up}{End up}"
-
 WinTermQualifier := "ahk_exe WindowsTerminal.exe"
 
 #t:: {
