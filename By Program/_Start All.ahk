@@ -4,6 +4,6 @@
 #SingleInstance Force
 Persistent
 
-#Include "By Programs/Notepad++.ahk"
-#Include "By Programs/Visual Studio Code.ahk"
-#Include "By Programs/Web Browsers.ahk"
+#Include "Notepad++.ahk"
+#Include "Visual Studio Code.ahk"
+#Include "Web Browsers.ahk"
