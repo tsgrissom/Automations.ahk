@@ -1,48 +1,55 @@
+; WINDOWS HOTKEYS
+
 #Requires AutoHotkey v2.0
 #SingleInstance Force
-Persistent
-SendMode "Input"
 
-NewTabOrOpen(AhkClass, Delay := 500) {
-    Qualifier := "ahk_class " . AhkClass
-    if WinExist(Qualifier) {
+; MARK: OS NAVIGATION
+
+#Space:: SendInput "!{Space}"
+
+#n:: {
+    if WinExist("ahk_exe notepad++.exe") {
         WinActivate
-        Send "{Ctrl down}{n down}{Ctrl up}{n up}" 
+        SendInput "^n"
     } else {
-        Run AhkClass
-        Sleep Delay
-        WinActivate Qualifier
+        Run "Notepad++"
+        ; TODO Finish
+        if not WinWaitActive("Notepad++") {
+            MsgBox "Something went wrong: Notepad++ was not active when it should have been"
+        } else {
+            WinActivate
+        }
     }
 }
 
-#n::NewTabOrOpen("Notepad++") ; Win+N hotkey
-#!n::NewTabOrOpen("Notepad", 750) ; Win+Alt+N hotkey
+#!d:: {
+    ; TODO Check if explorer already exists, if so open it there, otherwise do the below
+    Run "explorer C:\Users\Tyler\Downloads"
+}
 
-; TODO Put function keys to use!
-
-#b::Run "ms-settings:bluetooth"
-#!d::Run "explorer C:\Users\Tyler\Downloads"
-#+e::MsgBox "Namespace for opening dual Windows Explorer windows", "Parallel Explorer shortcut" ; Parallel Explorer windows
-#p::Run "explorer C:\Program Files\"
-
-WinTermQualifier := "ahk_exe WindowsTerminal.exe"
+QualifierWindowsTerminal := "ahk_exe WindowsTerminal.exe"
 
 #t:: {
-    if not WinExist(WinTermQualifier) {
+    if not WinExist(QualifierWindowsTerminal) {
         Run "wt"
         Sleep 300
-        WinActivate(WinTermQualifier)
+        WinActivate(QualifierWindowsTerminal)
     } else {
         WinActivate
-        Send "{Ctrl down}{Shift down}{t down}{Ctrl up}{Shift up}{t up}" 
+        SendInput "^+t"
     }
 }
 
-#HotIf WinActive(WinTermQualifier)
-^w:: {
-    Send "{Ctrl down}{Shift down}{w down}{Ctrl up}{Shift up}{w up}"
-}
-; ^,:: {
-;     SendInput "{F12 down}{F12 up}"
-; }
-; Couldn't figure out how to create a hotkey with comma
+; MARK: PROGRAM SPECIFIC
+
+; Terminal
+
+#HotIf WinActive(QualifierWindowsTerminal)
+^w:: SendInput "^+w"
+
+; File Explorer
+
+#HotIf WinActive("ahk_exe explorer.exe")
+; Hotkey: F3
+; Create a new folder by triggering the built-in keyboard shortcut
+F3:: SendInput "^+{N}"

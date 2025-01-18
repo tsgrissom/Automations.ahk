@@ -1,20 +1,15 @@
+; NOTEPAD++ HOTKEYS
+
 #Requires AutoHotkey v2.0
 #SingleInstance Force
-Persistent
-SendMode "Input"
-
 #HotIf WinActive("ahk_exe notepad++.exe")
 
-PreviousTab() {
-    Send "{Ctrl down}{PgUp down}{Ctrl up}{PgUp up}"
-}
+; Hotkey: Alt+Q or Alt+WheelUp
+; Open previous tab
+!q::
+!WheelUp:: SendInput "^{PgUp}"
 
-NextTab() {
-    Send "{Ctrl down}{PgDn down}{Ctrl up}{PgDn up}"
-}
-
-!q::PreviousTab()
-!e::NextTab()
-
-!WheelUp::PreviousTab()
-!WheelDown::NextTab()
+; Hotkey: Alt+E or Alt+WheelDown
+; Open next tab
+!e::
+!WheelDown:: SendInput "^{PgDn}"

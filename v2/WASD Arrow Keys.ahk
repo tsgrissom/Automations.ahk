@@ -13,24 +13,24 @@ PressArrowKey(Direction, HoldShift := false) {
 }
 
 ; Hotkey (Ctrl+Q): Sends a Tilde ~ character
-^q::Send "~"
+^q:: Send "~"
 ; Hotkey (Alt+Q): Sends a Backtick ` character
-!q::Send "``"
+!q:: Send "``"
 
 ; Hotkey (Alt+W): Triggers Up arrow key
-!w::PressArrowKey("Up")
+!w:: PressArrowKey("Up")
 ; Hotkey (Alt+A): Triggers Left arrow key
-!a::PressArrowKey("Left")
+!a:: PressArrowKey("Left")
 ; Hotkey (Alt+S): Triggers Down arrow key
-!s::PressArrowKey("Down")
+!s:: PressArrowKey("Down")
 ; Hotkey (Alt+D): Triggers Right arrow key
-!d::PressArrowKey("Right")
+!d:: PressArrowKey("Right")
 
 ; Hotkey (Shift+Alt+W): Triggers Up arrow key
-+!w::PressArrowKey("Up", true)
++!w:: PressArrowKey("Up", true)
 ; Hotkey (Shift+Alt+A): Triggers Left arrow key
-+!a::PressArrowKey("Left", true)
++!a:: PressArrowKey("Left", true)
 ; Hotkey (Shift+Alt+S): Triggers Down arrow key
-+!s::PressArrowKey("Down", true)
++!s:: PressArrowKey("Down", true)
 ; Hotkey (Shift+Alt+D): Triggers Right arrow key
-+!d::PressArrowKey("Right", true)
++!d:: PressArrowKey("Right", true)
